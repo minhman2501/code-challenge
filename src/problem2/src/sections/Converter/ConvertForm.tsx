@@ -93,7 +93,15 @@ const CurrencyConvertForm: React.FC = () => {
               />
             </div>
 
-            <SwapTokenPositionButton onClick={() => {}} />
+            <SwapTokenPositionButton
+              onClick={() => {
+                setFormData((prev) => ({
+                  ...prev,
+                  tokenFrom: prev.tokenTo,
+                  tokenTo: prev.tokenFrom,
+                }));
+              }}
+            />
 
             <div
               id="currencyToTextField"

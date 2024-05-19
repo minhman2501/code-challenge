@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Token } from "../api/currency";
 import clsx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
@@ -35,29 +35,24 @@ const Dropdown = ({
   onChange,
   activeToken,
 }: DropdownProps) => {
-  const tokenObj: Token = JSON.parse(activeToken);
-  const [activeItem, setActiveItem] = useState<Token>(tokenObj);
-  const [showMenu, setShowMenu] = useState<boolean>(false);
+  const activeTokenObj: Token = JSON.parse(activeToken);
 
+  const [showMenu, setShowMenu] = useState<boolean>(false);
   const handleOnChange = (selectedToken: Token) => {
     onChange(JSON.stringify(selectedToken));
-    setActiveItem(selectedToken);
+    if (showMenu) setShowMenu(!showMenu);
   };
-
-  useEffect(() => {
-    showMenu ? setShowMenu(!showMenu) : null;
-  }, [activeItem]);
 
   return (
     <div className={clsx("relative", className)}>
       <DropdownButton
-        activeItem={activeItem}
+        activeItem={activeTokenObj}
         onClick={() => setShowMenu(!showMenu)}
       />
       {showMenu && (
         <DropdownMenu
           currenciesList={currenciesList}
-          activeItem={activeItem}
+          activeItem={activeTokenObj}
           itemOnClick={handleOnChange}
         />
       )}
