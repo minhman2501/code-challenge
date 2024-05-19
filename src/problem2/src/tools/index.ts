@@ -1,7 +1,7 @@
 import { Token } from "../api/currency";
 import { CurrencyConvertInput } from "../schema/currencyConvertForm";
 
-const calculateConvertion = (from: number, to: number, amount: number) => {
+const calculateConversion = (from: number, to: number, amount: number) => {
   const result = (from * amount) / to;
   return result;
 };
@@ -29,7 +29,7 @@ export const convertCurrency = (data: CurrencyConvertInput) => {
   const amount = parseFloat(data.amount);
 
   if (!isObjectEmpty(tokenFrom) && !isObjectEmpty(tokenTo) && !isNaN(amount)) {
-    const convertedAmount = calculateConvertion(
+    const convertedAmount = calculateConversion(
       tokenFrom.price,
       tokenTo.price,
       amount,

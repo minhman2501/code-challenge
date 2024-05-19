@@ -27,6 +27,7 @@ const CurrencyConvertForm: React.FC = () => {
     fetchCurrencies().then((data) => setCurrencyList(data));
   }, []);
 
+  //NOTE: Perform the currency conversion when the formData changes its values
   useEffect(() => {
     const convertedAmount = convertCurrency(formData);
     setResult(convertedAmount);
