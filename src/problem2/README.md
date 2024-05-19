@@ -4,6 +4,12 @@
 
 <p id="description">A currency swap form. A user would use this form to swap assets from one currency to another</p>
 
+<h2>🚀 Demo</h2>
+
+<h2>Project Screenshots:</h2>
+
+<img src="https://i.ibb.co/K2XnGc8/Screenshot-from-2024-05-19-10-13-55.png" alt="project-screenshot" width="1000" height="400/">
+
 <h2>🧐 Features</h2>
 
 Here're some of the project's best features:
@@ -34,3 +40,5 @@ Technologies used in the project:
 - Vite
 - TypeScript
 - TailwindCSS
+
+<h2>💖Like my work?</h2>
