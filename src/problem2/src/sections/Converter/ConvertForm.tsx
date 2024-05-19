@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Currency, fetchCurrencies } from "../../api/currency";
+import { Token, fetchCurrencies } from "../../api/currency";
 import {
   CurrencyConvertFormSchema,
   CurrencyConvertInput,
@@ -11,7 +11,7 @@ import { convertCurrency } from "../../tools";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
 const CurrencyConvertForm: React.FC = () => {
-  const [currencyList, setCurrencyList] = useState<Currency[]>([]);
+  const [currencyList, setCurrencyList] = useState<Token[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [result, setResult] = useState<string>("");
 

@@ -1,4 +1,4 @@
-import { Currency } from "../api/currency";
+import { Token } from "../api/currency";
 import { CurrencyConvertInput } from "../schema/currencyConvertForm";
 
 const calculateConvertion = (from: number, to: number, amount: number) => {
@@ -11,8 +11,8 @@ export const validateAmount = (amount: string) => {
 };
 
 //NOTE: Filter out the replicated tokens
-export const formatList = (tokenList: Currency[]) => {
-  let formattedList = tokenList.reduce((acc: Currency[], obj) => {
+export const formatList = (tokenList: Token[]) => {
+  let formattedList = tokenList.reduce((acc: Token[], obj) => {
     let isTokenExist = acc.find(({ currency }) => obj.currency === currency);
     if (!isTokenExist) {
       acc.push(obj);
@@ -24,8 +24,8 @@ export const formatList = (tokenList: Currency[]) => {
 };
 
 export const convertCurrency = (data: CurrencyConvertInput) => {
-  const tokenFrom: Currency = JSON.parse(data.tokenFrom);
-  const tokenTo: Currency = JSON.parse(data.tokenTo);
+  const tokenFrom: Token = JSON.parse(data.tokenFrom);
+  const tokenTo: Token = JSON.parse(data.tokenTo);
   const amount = parseFloat(data.amount);
 
   if (!isObjectEmpty(tokenFrom) && !isObjectEmpty(tokenTo) && !isNaN(amount)) {

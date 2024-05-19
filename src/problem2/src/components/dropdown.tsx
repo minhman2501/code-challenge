@@ -1,30 +1,30 @@
 import { useEffect, useState } from "react";
-import { Currency } from "../api/currency";
+import { Token } from "../api/currency";
 import clsx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
 type DropdownProps = {
-  currenciesList: Currency[];
+  currenciesList: Token[];
   activeToken: string;
   className?: string;
   onChange: (token: string) => void;
 };
 
 type DropdownButtonProps = {
-  activeItem: Currency;
+  activeItem: Token;
   className?: string;
   onClick?: () => void;
 };
 
 type DropdownMenuProps = {
-  currenciesList: Currency[];
-  activeItem: Currency;
+  currenciesList: Token[];
+  activeItem: Token;
   className?: string;
-  itemOnClick: (token: Currency) => void;
+  itemOnClick: (token: Token) => void;
 };
 
 type CurrencyItemProps = {
-  token: Currency;
+  token: Token;
   useFor: "list" | "button";
   className?: string;
 };
@@ -35,11 +35,11 @@ const Dropdown = ({
   onChange,
   activeToken,
 }: DropdownProps) => {
-  const tokenObj: Currency = JSON.parse(activeToken);
-  const [activeItem, setActiveItem] = useState<Currency>(tokenObj);
+  const tokenObj: Token = JSON.parse(activeToken);
+  const [activeItem, setActiveItem] = useState<Token>(tokenObj);
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
-  const handleOnChange = (selectedToken: Currency) => {
+  const handleOnChange = (selectedToken: Token) => {
     onChange(JSON.stringify(selectedToken));
     setActiveItem(selectedToken);
   };
@@ -79,7 +79,7 @@ const DropdownButton = ({
       )}
     >
       {activeItem && JSON.stringify(activeItem) !== "{}" ? (
-        <Token useFor="button" token={activeItem} className="flex-1" />
+        <TokenItem useFor="button" token={activeItem} className="flex-1" />
       ) : (
         <span className={"text-white/60 font-semibold text-lg"}>
           Select a token
@@ -115,14 +115,14 @@ const DropdownMenu = ({
             },
           )}
         >
-          <Token useFor="list" token={token} />
+          <TokenItem useFor="list" token={token} />
         </li>
       ))}
     </ul>
   );
 };
 
-const Token = ({ token, useFor, className }: CurrencyItemProps) => {
+const TokenItem = ({ token, useFor, className }: CurrencyItemProps) => {
   return (
     <div className={clsx("flex items-center gap-2", className)}>
       <img
