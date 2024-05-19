@@ -8,7 +8,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://i.ibb.co/K2XnGc8/Screenshot-from-2024-05-19-10-13-55.png" alt="project-screenshot" width="1000" height="400/">
+<img src="https://i.ibb.co/K2XnGc8/Screenshot-from-2024-05-19-10-13-55.png" alt="project-screenshot" width="1000" height="800">
 
 <h2>🧐 Features</h2>
 
