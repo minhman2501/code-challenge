@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
+<h1 align="center" id="title">Fancy Form</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center"><img src="https://www.99tech.co/assets/img/99Tech.png" alt="project-image"></p>
 
-Currently, two official plugins are available:
+<p id="description">A currency swap form. A user would use this form to swap assets from one currency to another</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2>🧐 Features</h2>
 
-## Expanding the ESLint configuration
+Here're some of the project's best features:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Validate the input
+- Convert the value from token to another
+- Swap the selected tokens postion to each other
 
-- Configure the top-level `parserOptions` property like this:
+<h2>🛠️ Installation Steps:</h2>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+<p>1. Install the packages via yarn</p>
+
+```
+yarn
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<p>2. Run the project</p>
+
+```
+yarn vite
+```
+
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+- React
+- Vite
+- TypeScript
+- TailwindCSS
