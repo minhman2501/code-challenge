@@ -6,12 +6,11 @@ const ConverterSection: React.FC = () => {
       id="convertSection"
       className="bg-black h-screen flex items-center"
     >
-      <div className="container">
-        <div className="text-white">
-          <h2 className="text-4xl font-bold">Exchange</h2>
+      <div className="container flex flex-col items-center justify-center">
+        <div className="text-white text-center">
+          <h1 className="text-4xl font-bold uppercase">Exchange</h1>
           <p className="text-xl mt-2">
-            based on the current market condition with zero fees. You can
-            instantly convert your crypto anytime with a live price
+            Fill in the information below to convert your currency
           </p>
         </div>
         <CurrencyConvertForm />
