@@ -34,6 +34,7 @@ const CurrencyConvertForm: React.FC = () => {
   }, [formData]);
 
   const {
+    reset,
     handleSubmit,
     register,
     formState: { errors, isValid },
@@ -43,6 +44,24 @@ const CurrencyConvertForm: React.FC = () => {
     resolver: zodResolver(CurrencyConvertFormSchema),
     defaultValues: initialInput,
   });
+
+  const handleResetData = () => {
+    reset();
+    setFormData(initialInput);
+    setResult("");
+  };
+
+  //NOTE: Currently the resolver can't control entirely the value of formData so this is only a submit demonstration
+  const mockSubmit = () => {
+    if (isValid && result != "") {
+      setLoading(true);
+      setTimeout(() => {
+        handleResetData();
+        alert("Converted Successfully");
+        setLoading(false);
+      }, 2000);
+    }
+  };
 
   //NOTE: Submit the data
   const onSubmitHandler: SubmitHandler<CurrencyConvertInput> = (values, e) => {
@@ -130,6 +149,7 @@ const CurrencyConvertForm: React.FC = () => {
 
         <div className="p-4 w-full">
           <button
+            onClick={mockSubmit}
             disabled={loading || !isValid || result === ""}
             className="bg-lime-200 disabled:bg-gray-500 disabled:text-gray-800 text-lg w-full py-3 rounded-[100px] font-semibold"
           >
