@@ -77,7 +77,7 @@ const CurrencyConvertForm: React.FC = () => {
       <div className="w-full rounded-xl flex flex-col divide-y border-[2px] bg-[#262629] divide-[#37373a] border-[#37373a]">
         <div className="p-4 w-full">
           <h3 className="text-[#868688] font-bold text-xl">
-            Currency Exchange
+            Currency Converter
           </h3>
         </div>
 
@@ -153,7 +153,7 @@ const CurrencyConvertForm: React.FC = () => {
             disabled={loading || !isValid || result === ""}
             className="bg-lime-200 disabled:bg-gray-500 disabled:text-gray-800 text-lg w-full py-3 rounded-[100px] font-semibold"
           >
-            {loading ? "Swaping..." : "Confirm Swap"}
+            {loading ? "Converting..." : "Continue to Convert"}
           </button>
         </div>
       </div>
