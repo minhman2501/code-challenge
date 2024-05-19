@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { Token } from "../api/currency";
 import clsx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
@@ -36,7 +36,6 @@ const Dropdown = ({
   activeToken,
 }: DropdownProps) => {
   const activeTokenObj: Token = JSON.parse(activeToken);
-
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const handleOnChange = (selectedToken: Token) => {
     onChange(JSON.stringify(selectedToken));
@@ -141,4 +140,4 @@ const TokenItem = ({ token, useFor, className }: CurrencyItemProps) => {
   );
 };
 
-export default Dropdown;
+export default memo(Dropdown);
